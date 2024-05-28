@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/go/src/app
+    environment:
+      - GO111MODULE=on
+    command: ["sh", "-c", "go run /go/src/app/main.go"]
